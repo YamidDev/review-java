@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.util.Scanner;
 
 public class SystemNumericScanner {
@@ -10,7 +9,7 @@ public class SystemNumericScanner {
         try {
             number = Integer.parseInt(numberStr);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Err you need type a number");
+            System.out.println("Err you need type a number");
             main(args);
             System.exit(0);
         }
