@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class SystemNumericScanner {
     public static void main(String[] args) {
+        String cadena = "Hola que hace";
+        System.out.println(cadena.regionMatches(6, "que",0, 3));
         Scanner sc = new Scanner(System.in);
         System.out.println("type a number");
         String numberStr = sc.nextLine();
         int number = 0;
         try {
             number = Integer.parseInt(numberStr);
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             System.out.println("Err you need type a number");
             main(args);
             System.exit(0);
