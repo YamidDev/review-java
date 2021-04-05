@@ -1,3 +1,5 @@
+package basic;
+
 import javax.swing.*;
 
 public class SystemNumeric {
