@@ -12,6 +12,7 @@ public class SystemNumericScanner {
         int number = 0;
         try {
             number = Integer.parseInt(numberStr);
+            sc.close();
         } catch (Exception e) {
             System.out.println("Err you need type a number");
             main(args);
