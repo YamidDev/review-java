@@ -41,7 +41,7 @@ public class BankAccount {
         balance += amount;
     }
 
-    void changeTypeAcc(String newType) {
+    void changeTypeAcc() {
         accountType = AccountType.SAVING;
     }
 
