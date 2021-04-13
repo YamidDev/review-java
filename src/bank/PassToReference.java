@@ -12,7 +12,7 @@ public class PassToReference {
         System.out.println("El valor de var1 es: "+var1);
         System.out.println("El valor de var2 es: "+var2);
 
-        BankAccount julietaAcc = new BankAccount("Julieta", "Ahorros", 23_500);
+        BankAccount julietaAcc = new BankAccount("Julieta", BankAccount.SAVING_TYPE, 23_500);
         julietaAcc.balance = 23_500;
 
         BankAccount anaCredit = julietaAcc;

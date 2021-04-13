@@ -5,6 +5,11 @@ public class BankAccount {
     String accountType;
     double balance;
 
+    public static final String SAVING_TYPE = "Ahorros";
+    public static final String PAYROLL_TYPE = "Nomina";
+    public static final String CREDIT_TYPE = "Credito";
+    public static final double COMISSION = 1.2;
+
     BankAccount(String owner, String accountType, double balance) {
         this.owner = owner;
         this.accountType = accountType;
@@ -13,7 +18,7 @@ public class BankAccount {
 
     BankAccount(String owner, double balance) {
         this.owner = owner;
-        this.accountType = "ahorro";
+        this.accountType = SAVING_TYPE;
         this.balance = balance;
     }
 
@@ -21,7 +26,12 @@ public class BankAccount {
         if(amount < 0 ) {
             return;
         }
+        double comission = 0.0;
+        if(accountType.equals(SAVING_TYPE)) {
+            comission = COMISSION;
+        }
         balance -= amount;
+        balance -= comission;
     }
 
     void uploadMoney(double amount) {
