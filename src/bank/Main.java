@@ -2,13 +2,19 @@ package bank;
 
 public class Main {
     public static void main(String[] args) {
-        BankAccount juanAccount = new BankAccount();
+        BankAccount juanAccount = new BankAccount("Juan Martinez", "Nomina", 23_500);
 
-        juanAccount.owner = "Juan Martinez";
-        juanAccount.accountType = "Nomina";
-        juanAccount.balance = 23_500;
+        juanAccount.takeMoney(500);
 
-        System.out.println("Cual es el saldo de la cuenta de juan: " + juanAccount.balance);
+        System.out.println("juanAccount balance = " + juanAccount.getBalance());
+
+        juanAccount.uploadMoney(100);
+        System.out.println("juanAccount balance = " + juanAccount.getBalance());
+
+        juanAccount.accountType = "Ahorros";
+        System.out.println("juanAccount accountType = " + juanAccount.getAccountType());
+        juanAccount.takeMoney(-1000);
+        System.out.println(juanAccount.getBalance());
 
     }
 }
