@@ -2,7 +2,7 @@ package bank;
 
 public class Main {
     public static void main(String[] args) {
-        BankAccount juanAccount = new BankAccount("Juan Martinez", BankAccount.PAYROLL_TYPE, 23_500);
+        BankAccount juanAccount = new BankAccount("Juan Martinez", AccountType.PAYROLL, 23_500);
 
         juanAccount.takeMoney(500);
 
@@ -11,8 +11,6 @@ public class Main {
         juanAccount.uploadMoney(100);
         System.out.println("juanAccount balance = " + juanAccount.getBalance());
 
-        juanAccount.accountType = "Ahorros";
-        System.out.println("juanAccount accountType = " + juanAccount.getAccountType());
         juanAccount.takeMoney(-1000);
         System.out.println(juanAccount.getBalance());
 

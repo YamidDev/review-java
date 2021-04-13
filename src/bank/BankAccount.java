@@ -2,15 +2,12 @@ package bank;
 
 public class BankAccount {
     String owner;
-    String accountType;
+    AccountType accountType;
     double balance;
 
-    public static final String SAVING_TYPE = "Ahorros";
-    public static final String PAYROLL_TYPE = "Nomina";
-    public static final String CREDIT_TYPE = "Credito";
     public static final double COMISSION = 1.2;
 
-    BankAccount(String owner, String accountType, double balance) {
+    BankAccount(String owner, AccountType accountType, double balance) {
         this.owner = owner;
         this.accountType = accountType;
         this.balance = balance;
@@ -18,7 +15,7 @@ public class BankAccount {
 
     BankAccount(String owner, double balance) {
         this.owner = owner;
-        this.accountType = SAVING_TYPE;
+        this.accountType = AccountType.SAVING;
         this.balance = balance;
     }
 
@@ -26,12 +23,18 @@ public class BankAccount {
         if(amount < 0 ) {
             return;
         }
-        double comission = 0.0;
-        if(accountType.equals(SAVING_TYPE)) {
-            comission = COMISSION;
-        }
+        double comission = calculateComission();
         balance -= amount;
         balance -= comission;
+    }
+
+    double calculateComission() {
+        switch (accountType) {
+            case SAVING:
+                return COMISSION;
+            default:
+                return 0;
+        }
     }
 
     void uploadMoney(double amount) {
@@ -39,15 +42,11 @@ public class BankAccount {
     }
 
     void changeTypeAcc(String newType) {
-        accountType = newType;
+        accountType = AccountType.SAVING;
     }
 
     double getBalance() {
         return balance;
-    }
-
-    String getAccountType() {
-        return accountType;
     }
 
 }
