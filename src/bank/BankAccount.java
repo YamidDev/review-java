@@ -14,9 +14,11 @@ public class BankAccount {
     }
 
     BankAccount(String owner, double balance) {
-        this.owner = owner;
-        this.accountType = AccountType.SAVING;
-        this.balance = balance;
+       this(owner, AccountType.SAVING, 0);
+    }
+
+    BankAccount(){
+        this("", AccountType.SAVING, 0);
     }
 
     void takeMoney(double amount) {
