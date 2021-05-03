@@ -1,5 +1,6 @@
 package bank;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -31,7 +32,18 @@ public class Ath {
     }
 
     void queryLastsTransactions() {
-        System.out.println("consulting data...");
+        GeneratorRandomMovements generatorRandomMovements = new GeneratorRandomMovements();
+        System.out.println("¿Cuántos movimientos quiere consultar?");
+        Scanner sc = new Scanner(System.in);
+        int numberOfMovements = sc.nextInt();
+        ArrayList<String> movements = generatorRandomMovements.getMovements(numberOfMovements, "pesos");
+        showMovements(movements);
+    }
+
+    void showMovements (ArrayList<String> movements) {
+        for (String movement : movements ) {
+            System.out.println(movement);
+        }
     }
 
 
