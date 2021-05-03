@@ -1,23 +1,23 @@
 package bank;
 
 public class BankAccount {
-    String owner;
-    AccountType accountType;
-    double balance;
+    private String owner;
+    private AccountType accountType;
+    private double balance;
 
     public static final double COMISSION = 1.2;
 
-    BankAccount(String owner, AccountType accountType, double balance) {
+    public BankAccount(String owner, AccountType accountType, double balance) {
         this.owner = owner;
         this.accountType = accountType;
         this.balance = balance;
     }
 
-    BankAccount(String owner, double balance) {
+    public BankAccount(String owner, double balance) {
        this(owner, AccountType.SAVING, 0);
     }
 
-    BankAccount(){
+    public BankAccount(){
         this("", AccountType.SAVING, 0);
     }
 
@@ -47,8 +47,19 @@ public class BankAccount {
         accountType = AccountType.SAVING;
     }
 
-    double getBalance() {
+    public double getBalance() {
         return balance;
     }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
 }

@@ -1,4 +1,7 @@
-package bank;
+package basic;
+
+import bank.AccountType;
+import bank.BankAccount;
 
 public class PassToReference {
     public static void main(String[] args) {
@@ -13,13 +16,13 @@ public class PassToReference {
         System.out.println("El valor de var2 es: "+var2);
 
         BankAccount julietaAcc = new BankAccount("Julieta", AccountType.SAVING, 23_500);
-        julietaAcc.balance = 23_500;
+        julietaAcc.setBalance(23_500);
 
         BankAccount anaCredit = julietaAcc;
-        anaCredit.balance = 10_000;
+        anaCredit.setBalance(10_000);
 
-        System.out.println("Julieta saldo = " + julietaAcc.balance);
-        System.out.println("Ana saldo = " + anaCredit.balance);
+        System.out.println("Julieta saldo = " + julietaAcc.getBalance());
+        System.out.println("Ana saldo = " + anaCredit.getBalance());
 
     }
 }
